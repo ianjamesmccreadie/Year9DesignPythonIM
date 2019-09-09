@@ -1,0 +1,7 @@
+print("I like japanese gyoza")
+print("I like weekends and breaks")
+print("I like sneakers")
+print("I like tennis")
+print("I like Chipolte")
+print("Tesla cars are innovative")
+print("I like those Balenciagas, the ones that look like socks")
