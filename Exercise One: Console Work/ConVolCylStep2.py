@@ -18,4 +18,15 @@ height = (int)(height)     #cast to int
 
 volume = math.pi * radius * radius * height
 
-print ("The volume is" + str(volume) )
+
+
+volume = round(volume,2)
+
+
+
+print("Hi " + name + "!")
+print("Give a cylinder with:")
+print("Radius = "+str(radius))
+print("Height = "+str(height))
+print("The volume is: "+str(volume))  
+print("\n\t\t\tV = \u03C0\u00d7radius\u00b2\u00d7height")
