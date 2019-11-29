@@ -36,5 +36,7 @@ w = tk.OptionMenu(root, variable, *OPTIONS)
 w.config()
 w.grid(row=2, sticky="E")
 
+photocanvas = tk.Canvas(height=200, width=300)
+phtoimage = ImageTk.PhotoImage(file="scad3.jpg", height=200, width=300)
 
 root.mainloop()
