@@ -41,9 +41,9 @@ def on_closing():
 
 #creates the title using the label function
 
-title = tk.Label(text = "Vox Populi", font = ("Bebas", 50), bg = '#5495f0')
+title = tk.Label(text = "Vox Populi", font = ("Bebas", 70), bg = '#5495f0')
 title.config()
-title.grid(row = 0, column=1)
+title.grid(row = 0, column=1, padx = 0)
 
 canvas = tk.Canvas(root, height=100, width=200,background='#5495f0')
 
@@ -51,32 +51,6 @@ canvas = tk.Canvas(root, height=100, width=200,background='#5495f0')
 
 #should create a rounded rectangle (see radd.py)
 
-def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-
-    points = [x1+radius, y1,
-              x1+radius, y1,
-              x2-radius, y1,
-              x2-radius, y1,
-              x2, y1,
-              x2, y1+radius,
-              x2, y1+radius,
-              x2, y2-radius,
-              x2, y2-radius,
-              x2, y2,
-              x2-radius, y2,
-              x2-radius, y2,
-              x1+radius, y2,
-              x1+radius, y2,
-              x1, y2,
-              x1, y2-radius,
-              x1, y2-radius,
-              x1, y1+radius,
-              x1, y1+radius,
-              x1, y1]
-
-    return canvas.create_polygon(points, **kwargs, smooth=True)
-
-my_rectangle = round_rectangle(100, 25, 250, 75, radius=20, fill="blue") #sets the paramaters for the size/color
 
 
 img = tk.PhotoImage(file="voxpopulai.png")      
@@ -85,7 +59,7 @@ img = tk.PhotoImage(file="voxpopulai.png")
 
 canvas.create_image(50,50,image=img) 
 canvas.config(highlightthickness="0") #configures whats inside the canvas
-canvas.grid(row=0, column=0) #uses grid style geometry manager
+canvas.grid(row=0, column=2, rowspan = 2) #uses grid style geometry manager
 
 e = tk.Text() #builds a text canvas
 e.config()
@@ -95,12 +69,12 @@ e.grid(row=2, column=0, columnspan=4)
 
 btn = tk.Button(text = "Submit", bd = 2,width =  20, command = runMe ) # builds a button widget, specifcally for the submission button
 btn.config()
-btn.grid(row=3, column=2)
+btn.grid(row=3, column=2, padx=29)
 
 
 check = tk.Checkbutton(text = "Night Shift" , bd = 3  ) #creates a checkbutton widget
 check.config()
-check.grid(row= 3, column=0, sticky = "SW")
+check.grid(row= 3, column=1, pady=29, padx = 30 )
 
 #defines the options
 
@@ -117,7 +91,7 @@ variable.set(OPTIONS[0])
 
 w = tk.OptionMenu(root, variable, *OPTIONS) 
 w.config()
-w.grid(row=3, column=1, sticky="e")
+w.grid(row=3, column=1, sticky="e", pady=29, padx = 19)
 
 OPTIONS = [ 
     "Year 8",
@@ -134,7 +108,7 @@ variable.set(OPTIONS[0])
 
 w = tk.OptionMenu(root, variable, *OPTIONS) 
 w.config()
-w.grid(row=3, column=3, sticky = "SE" )
+w.grid(row= 3, column=3, pady = 29)
 
 
 
